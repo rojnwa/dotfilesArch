@@ -34,6 +34,14 @@ bar {
 	modifier None
 }
 
+# arch blue 		#1793D1
+# debian red		#D70A53
+# manjaro green		#8CBC65
+# matrix green		#00FF00
+# mint green		#5FAA24
+# ubuntu orange  	#F37320
+set $color #1793D1
+
 # #---Basic Bindings---# #
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
 
@@ -195,3 +203,33 @@ bindsym $mod+Shift+Left		move left
 bindsym $mod+Shift+Down		move down
 bindsym $mod+Shift+Up		move up
 bindsym $mod+Shift+Right 	move right
+
+
+#set $bg-color 	         #383C4A
+#set $bd-color		 #838383
+#set $inactive-bg-color   #383C4A
+#set $inactive-bd-color	 #383C4A
+#set $text-color          #f3f4f5
+#set $inactive-text-color #676E7D
+##			         border			background		text	 	     indicator	child border
+#client.focused          	$bd-color		$bg-color		$text-color	     $bd-color	$bd-color
+#client.unfocused        	$bg-color		$bg-color 		$inactive-text-color $bg-color	$bg-color
+#client.focused_inactive		$bg-color		$bg-color	 	$inactive-text-color $bg-color	$bg-color
+#client.urgent           	$bg-color   		$bg-color		$text-color	     $bg-color	$bg-color
+#client.background  				        $bg-color
+
+## class                  border   backgr.  text     indic.   child_border
+#client.focused           #000000  #000000  #999999  #000000  #000000
+#client.focused_inactive  #000000  #000000  #888888  #000000  #000000
+#client.unfocused         #000000  #000000  #555555  #000000  #000000
+#client.urgent            #000000  #000000  #ff0000  #000000  #000000
+#client.placeholder       #000000  #000000  #000000  #000000  #000000
+#
+#client.background        #000000
+
+
+# class                 border  backgr. text
+client.focused          $color  $color  #dddddd
+client.focused_inactive #333333 #333333 #888888
+client.unfocused        #333333 #333333 #888888
+client.urgent           #900000 #900000 #ffffff
