@@ -17,7 +17,7 @@ convert /tmp/screen.png -paint 1 -swirl 360 /tmp/screen.png
 #mpc pause
 
 # Lock it up!
-i3lock -e -f -c 000000 -i /tmp/screen.png
+i3lock -e -f -c 000000 -i /tmp/screen.png -n; notify-send "Welcome back Roman!" -i ~/Pictures/man_in_steamy_room.png
 
 # If still locked after $timeout milliseconds, turn off screen.
 while [[ $(pgrep -x i3lock) ]]; do

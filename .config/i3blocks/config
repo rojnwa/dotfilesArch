@@ -1,6 +1,8 @@
 command=~/.local/bin/statusbar/$BLOCK_NAME
+#seperator=false
 separator_block_width=15
-#markup=pango
+align=center
+markup=pango
 
 #[update]
 #markup=pango
