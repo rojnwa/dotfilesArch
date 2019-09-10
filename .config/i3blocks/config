@@ -65,14 +65,14 @@ label=
 
 [cpu]
 interval=5
-label=
+label=
 
 [cpu_usage2]
 markup=pango
 interval=persist
 #min_width=CPU 100.00%
 REFRESH_TIME=5
-LABEL=
+LABEL=
 WARN_PERCENT=50
 CRIT_PERCENT=80
 #DECIMALS=2
@@ -85,9 +85,9 @@ signal=10
 #interval=60
 #command=disk /
 
-[disk]
-interval=60
-command=disk /home 
+#[disk]
+#interval=60
+#command=disk /home 
 
 #[battery]
 #command=battery BAT0
