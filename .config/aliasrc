@@ -29,9 +29,10 @@ alias ka="killall" \
 	trans="trans -v" \
 	ll="ls -l" \
 	la="ls -la" \
-	nf="clear && neofetch | lolcat" \
+	nf="clear && neofetch --source 'Pictures/terry-mouth.png' --backend 'chafa'" \
 	dunstp="notify-send 'DUNST_COMMAND_PAUSE'" \
-	dunstr="notify-send 'DUNST_COMMAND_RESUME'"
+	dunstr="notify-send 'DUNST_COMMAND_RESUME'" \
+	recomp="ka compton && compton -b"
 
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
 

@@ -1,8 +1,10 @@
 command=~/.local/bin/statusbar/$BLOCK_NAME
-#seperator=false
+full_text=
+#separator=false
 separator_block_width=15
 align=center
 markup=pango
+#color=#666666
 
 #[update]
 #markup=pango
@@ -19,10 +21,10 @@ command=cat /tmp/recordingicon
 interval=once
 signal=9
 
-[music]
-label=🎼
-interval=once
-signal=11
+#[music]
+#label=🎼
+#interval=once
+#signal=11
 
 #[news]
 #label=📰
@@ -104,8 +106,8 @@ interval=30
 [internet]
 interval=10
 
-[monitor]
-interval=once
+#[monitor]
+#interval=once
 #SHOW_ON_OFF=1
 #SHOW_NAMES=1
 #SHOW_PRIMARY=1
@@ -120,3 +122,5 @@ interval=once
 #FONT_FAMILY=DejaVu Sans Mono
 #FONT_SIZE=11
 #CLOSE_TO_BOUNDARY_BUFFER=20
+
+[separator]

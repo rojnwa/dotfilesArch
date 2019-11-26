@@ -6,7 +6,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export FYRBASE="$HOME/fyr"
 
 # Adds `~/.local/bin/` and all subdirectories to $PATH
-export PATH="$PATH:$FYRBASE/bin:$(du "$HOME/.local/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$PATH:$HOME/.cabal/bin:$FYRBASE/bin:$(du "$HOME/.local/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="firefox"
@@ -39,4 +39,4 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
 
 # Switch escape and caps if tty:
-sudo -n loadkeys ~/.local/bin/ttymaps.kmap 2>/dev/null
+#sudo -n loadkeys ~/.local/bin/ttymaps.kmap 2>/dev/null
