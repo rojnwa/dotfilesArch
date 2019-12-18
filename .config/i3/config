@@ -27,7 +27,7 @@ for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
 bar {
-	font pango:Exo2,FontAwesome5Free,FontAwesome5Brands,SymbolsNerdFont 12
+	font pango:Acme,Russo One,FontAwesome5Free,FontAwesome5Brands,SymbolsNerdFont 12
 	status_command i3blocks
 	position top
 	mode dock
@@ -118,8 +118,9 @@ bindsym $mod+Shift+b		floating toggle; sticky toggle; exec --no-startup-id hover
 bindsym $mod+Shift+n		floating toggle; sticky toggle; exec --no-startup-id hover right
 
 # #---Workspace Bindings---# #
-bindsym $mod+Home		workspace $ws1
-bindsym $mod+Shift+Home		move container to workspace $ws1
+#bindsym $mod+Home		workspace $ws1
+#bindsym $mod+Shift+Home		move container to workspace $ws1
+bindsym $mod+Home		exec xfcepaneltoggle
 bindsym $mod+End		workspace $ws10
 bindsym $mod+Shift+End		move container to workspace $ws10
 bindsym $mod+Prior		workspace prev

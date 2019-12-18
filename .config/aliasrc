@@ -1,6 +1,9 @@
 #!/bin/sh
 alias ka="killall" \
 	mkd="mkdir -pv" \
+	rm="rm -v" \
+	cp="cp -iv" \
+	mv="mv -iv" \
 	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" \
 	calcurse="calcurse -D ~/.config/calcurse" \
 	magit="nvim -c MagitOnly" \
@@ -18,7 +21,7 @@ alias ka="killall" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
-	yt="youtube-dl --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
+	yt="youtube-dl --add-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
 	YT="youtube-viewer" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
@@ -29,9 +32,11 @@ alias ka="killall" \
 	trans="trans -v" \
 	ll="ls -l" \
 	la="ls -la" \
-	nf="clear && neofetch --source 'Pictures/terry-mouth.png' --backend 'chafa'" \
+	nf="clear && neofetch --source '~/Pictures/terry-mouth.png' --backend 'chafa'" \
 	dunstp="notify-send 'DUNST_COMMAND_PAUSE'" \
 	dunstr="notify-send 'DUNST_COMMAND_RESUME'" \
+	quickwall="QuickWall --setter feh --disable-theme --random" \
+	7zc="7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on" \
 	recomp="ka compton && compton -b"
 
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.

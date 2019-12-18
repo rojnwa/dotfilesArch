@@ -44,7 +44,7 @@ interval=30
 #CRIT_TX=51200
 
 [pacpackages]
-#label=
+#label=📦
 interval=once
 signal=8
 
