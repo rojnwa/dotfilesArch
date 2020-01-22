@@ -26,13 +26,13 @@ signal=9
 #interval=once
 #signal=11
 
-#[news]
+[news]
 #label=📰
-#interval=once
-#signal=6
+interval=once
+signal=6
 
-[iplocate]
-interval=30
+#[iplocate]
+#interval=30
 
 #[bandwidth2]
 #interval=persist
@@ -63,7 +63,7 @@ signal=5
 
 [memory]
 interval=30
-label=
+label=🧠
 
 [cpu]
 interval=5
@@ -72,7 +72,7 @@ label=
 [cpu_usage2]
 markup=pango
 interval=persist
-#min_width=CPU 100.00%
+#min_width= 100.00%
 REFRESH_TIME=5
 LABEL=
 WARN_PERCENT=50
@@ -103,8 +103,8 @@ interval=5 #eig 30
 label=
 interval=30
 
-[internet]
-interval=10
+#[internet]
+#interval=10
 
 #[monitor]
 #interval=once
@@ -123,4 +123,4 @@ interval=10
 #FONT_SIZE=11
 #CLOSE_TO_BOUNDARY_BUFFER=20
 
-[separator]
+#[separator]

@@ -40,3 +40,4 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 
 # Switch escape and caps if tty:
 #sudo -n loadkeys ~/.local/bin/ttymaps.kmap 2>/dev/null
+

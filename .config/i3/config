@@ -27,7 +27,7 @@ for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
 bar {
-	font pango:Acme,Russo One,FontAwesome5Free,FontAwesome5Brands,SymbolsNerdFont 12
+	font pango:SF Mono,Bungee, Inter Semi Bold, Neris Black, Acme, FontAwesome5Free, FontAwesome5Brands, Symbola Bold 12
 	status_command i3blocks
 	position top
 	mode dock
@@ -175,10 +175,10 @@ bindsym $mod+Shift+0	move container to workspace $ws10
 
 for_window [class="Pinentry"] sticky enable
 for_window [class="sent"] border pixel 0px
-for_window [title="GIMP Startup"] move workspace $ws5
-for_window [class="Gimp"] move workspace $ws5
-for_window [title="Telegram"] move workspace $ws10
-for_window [title="Signal"] move workspace $ws10
+for_window [title="Glimpse Startup"] move workspace $ws5
+for_window [class="Glimpse"] move workspace $ws5
+for_window [class="Telegram"] move workspace $ws10
+for_window [class="Signal"] move workspace $ws10
 for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position center
 for_window [title="Default - Wine desktop"] floating enable

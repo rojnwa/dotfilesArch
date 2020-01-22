@@ -37,7 +37,9 @@ alias ka="killall" \
 	dunstr="notify-send 'DUNST_COMMAND_RESUME'" \
 	quickwall="QuickWall --setter feh --disable-theme --random" \
 	7zc="7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on" \
-	recomp="ka compton && compton -b"
+	4chan="python3 ~/4chin.py" \
+	recomp="ka compton && compton -b" \
+	colormeme="exec 1> >(lolcat >&2)"
 
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
 

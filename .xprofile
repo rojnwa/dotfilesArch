@@ -12,5 +12,6 @@ compton &		# xcompmgr for transparency
 dunst &			# dunst for notifications
 telegram-desktop &
 sleep 2 && qsyncthingtray &
-signal-desktop --use-tray-icon &
+signal-desktop --start-in-tray &
+nm-applet &
 
