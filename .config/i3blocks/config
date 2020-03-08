@@ -34,22 +34,28 @@ signal=6
 #[iplocate]
 #interval=30
 
-#[bandwidth2]
-#interval=persist
-#markup=pango
+[bandwidth2]
+interval=persist
+markup=pango
 #LABEL=
-#WARN_RX=307200
-#WARN_TX=30720
-#CRIT_RX=512000
-#CRIT_TX=51200
+WARN_RX=307200
+WARN_TX=30720
+CRIT_RX=512000
+CRIT_TX=51200
 
 [pacpackages]
 #label=📦
 interval=once
 signal=8
 
+[nm-vpn]
+#init_color=#FFFF00
+#on_color=#00FF00
+#label=
+interval=5
+
 [torrent]
-interval=20
+interval=10
 signal=7
 
 [weather]
@@ -63,7 +69,7 @@ signal=5
 
 [memory]
 interval=30
-label=🧠
+label=
 
 [cpu]
 interval=5
@@ -73,7 +79,7 @@ label=
 markup=pango
 interval=persist
 #min_width= 100.00%
-REFRESH_TIME=5
+REFRESH_TIME=1
 LABEL=
 WARN_PERCENT=50
 CRIT_PERCENT=80
@@ -97,7 +103,7 @@ signal=10
 
 [battery2]
 markup=pango
-interval=5 #eig 30
+interval=30
 
 [clock]
 label=

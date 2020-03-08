@@ -27,7 +27,7 @@ for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
 bar {
-	font pango:SF Mono,Bungee, Inter Semi Bold, Neris Black, Acme, FontAwesome5Free, FontAwesome5Brands, Symbola Bold 12
+	font pango:SF Mono,Bungee, Inter Semi Bold, Neris Black, Acme, FontAwesome5Free, FontAwesome5Brands, Symbola Bold 10
 	status_command i3blocks
 	position top
 	mode dock
@@ -43,7 +43,8 @@ bar {
 set $color #1793D1
 
 # #---Basic Bindings---# #
-bindsym $mod+Shift+Return	exec --no-startup-id samedir
+#bindsym $mod+Shift+Return	exec --no-startup-id samedir
+bindsym $mod+Shift+Return 	exec --no-startup-id $term -d "$(xcwd)"
 
 bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space		focus mode_toggle
