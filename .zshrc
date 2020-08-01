@@ -127,3 +127,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory
+
+function launch {
+    nohup $1 >/dev/null 2>/dev/null & disown; exit
+}

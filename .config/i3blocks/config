@@ -103,7 +103,7 @@ signal=10
 
 [battery2]
 markup=pango
-interval=30
+interval=5
 
 [clock]
 label=
