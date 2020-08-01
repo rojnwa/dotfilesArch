@@ -17,7 +17,7 @@ alias ka="killall" \
 	x="sxiv -ft *" \
 	sdn="sudo shutdown -h now" \
 	gua="git remote | xargs -L1 git push --all" \
-	ls="colorls -h --sd" \
+	ls="colorls -h --sd --gs" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi" \
@@ -31,8 +31,7 @@ alias ka="killall" \
 	transde="trans -v -t de" \
 	trans="trans -v" \
 	ll="ls -l" \
-	la="ls -la" \
-	lc="ls -lA --sd" \
+	la="ls -lA" \
 	nf="clear && neofetch --source '~/Pictures/terry-mouth.png' --backend 'chafa'" \
 	dunstp="notify-send 'DUNST_COMMAND_PAUSE'" \
 	dunstr="notify-send 'DUNST_COMMAND_RESUME'" \
