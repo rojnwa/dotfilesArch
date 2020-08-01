@@ -6,6 +6,15 @@ align=center
 markup=pango
 #color=#666666
 
+[spotify]
+command=i3blocks-spotify-persist -c ~/.config/i3blocks-spotify.config
+interval=persist
+
+#[mediaplayer]
+#instance=spotify
+#interval=5
+#signal=10
+
 #[update]
 #markup=pango
 #interval= 3600
@@ -26,22 +35,22 @@ signal=9
 #interval=once
 #signal=11
 
-[news]
+#[news]
 #label=📰
-interval=once
-signal=6
+#interval=once
+#signal=6
 
 #[iplocate]
 #interval=30
 
-[bandwidth2]
-interval=persist
-markup=pango
-#LABEL=
-WARN_RX=307200
-WARN_TX=30720
-CRIT_RX=512000
-CRIT_TX=51200
+#[bandwidth2]
+#interval=persist
+#markup=pango
+##LABEL=
+#WARN_RX=307200
+#WARN_TX=30720
+#CRIT_RX=512000
+#CRIT_TX=51200
 
 [pacpackages]
 #label=📦

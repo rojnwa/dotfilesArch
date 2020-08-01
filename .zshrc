@@ -131,3 +131,8 @@ setopt appendhistory
 function launch {
     nohup $1 >/dev/null 2>/dev/null & disown; exit
 }
+
+autoload -U bashcompinit
+bashcompinit
+
+eval "$(register-python-argcomplete pipx)"
