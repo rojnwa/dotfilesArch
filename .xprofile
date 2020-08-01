@@ -1,15 +1,12 @@
 #!/bin/sh
 
-setbg &		# Set the background
-sxhkd &	# Bind keys
-# Switch to US international with Caps as Mod/Escape
-remaps &
-# Properties button extra Mod/Escape
-unclutter &		# Remove mouse when idle
-compton &		# xcompmgr for transparency
-dunst &			# dunst for notifications
+setbg &				# Set the background
+sxhkd &				# Bind keys
+remaps &			# Switch to US international with Caps as Mod/Escape
+unclutter &			# Remove mouse when idle
+compton &			# xcompmgr for transparency
+dunst &				# dunst for notifications
 telegram-desktop &
-sleep 2 && qsyncthingtray &
-signal-desktop --start-in-tray &
+sleep 2 && qsyncthingtray & 	# 2 secs delay to prevent networking issues
 nm-applet &
 
