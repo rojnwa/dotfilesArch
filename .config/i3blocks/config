@@ -10,8 +10,10 @@ markup=pango
 #command=scroll ~/.local/bin/statusbar/mediaplayer
 #interval=repeat
 
+
 [music2]
-interval=5
+command=~/.local/bin/statusbar/scroll music2
+interval=repeat
 signal=13
 align=right
 min_width=350
@@ -53,14 +55,29 @@ signal=9
 #[iplocate]
 #interval=30
 
-[bandwidth2]
-interval=persist
-markup=pango
-LABEL=
-WARN_RX=307200
-WARN_TX=30720
-CRIT_RX=512000
-CRIT_TX=51200
+[bandwidth1]
+instance=wlp3s0;in
+interval=1
+min_width=50
+align=left
+label=
+
+[bandwidth1]
+instance=wlp3s0;out
+interval=1
+min_width=50
+align=left
+label=
+
+#[bandwidth2]
+#interval=persist
+#markup=pango
+#LABELUP=⬆
+#LABELDOWN=⬇
+#WARN_RX=307200
+#WARN_TX=30720
+#CRIT_RX=512000
+#CRIT_TX=51200
 
 [pacpackages]
 #label=📦
