@@ -15,4 +15,4 @@ cfmc	~/.config/ncmpcpp/config
 cfB	~/.config/i3blocks/config
 cfk	~/.config/sxhkd/sxhkdrc
 cfs	~/st/config.h
-cfc	~/.config/compton.conf
+cfc	~/.config/picom.conf

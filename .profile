@@ -30,7 +30,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export FYRBASE="$HOME/fyr"
 
 # Adds `~/.local/bin/` and all subdirectories to $PATH
-export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH:$HOME/.cabal/bin:$FYRBASE/bin:$(du "$HOME/.local/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$HOME/.gem/ruby/3.0.0/bin:$HOME/.gem/ruby/2.7.0/bin:$PATH:$HOME/.cabal/bin:$FYRBASE/bin:$(du "$HOME/.local/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export EDITOR="nvim"
 export TERMINAL="kitty"
 export BROWSER="firefox"

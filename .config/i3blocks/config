@@ -5,6 +5,7 @@ separator_block_width=15
 align=center
 markup=pango
 #color=#666666
+stroke=#000000
 
 #[scroll]
 #command=scroll ~/.local/bin/statusbar/mediaplayer
@@ -96,10 +97,10 @@ signal=7
 interval=3600
 signal=5
 
-[mailbox]
+#[mailbox]
 #label=
-interval=60
-signal=12
+#interval=60
+#signal=12
 
 [memory]
 interval=1

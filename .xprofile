@@ -4,9 +4,10 @@ setbg &				# Set the background
 sxhkd &				# Bind keys
 remaps &			# Switch to US international with Caps as Mod/Escape
 unclutter &			# Remove mouse when idle
-compton &			# xcompmgr for transparency
+picom -b			# xcompmgr for transparency
 dunst &				# dunst for notifications
 telegram-desktop &
+signal-desktop --use-tray-icon &
 sleep 2 && qsyncthingtray & 	# 2 secs delay to prevent networking issues
 nm-applet &
-
+xautolock -time 10 -locker "bash ~/.config/i3/lock.sh" &

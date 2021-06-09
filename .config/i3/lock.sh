@@ -1,7 +1,9 @@
 #!/bin/bash
 
+set -e
+
 # Approximate timeout rate in milliseconds (checked every 5 seconds).
-timeout="10000"
+timeout="5000"
 
 # Take a screenshot:
 scrot -o /tmp/screen.png
@@ -15,12 +17,14 @@ convert /tmp/screen.png -paint 1 -swirl 360 /tmp/screen.png
 # Pause music (mocp and mpd):
 #mocp -P
 #mpc pause
-
+xset s off dpms 0 10 0
 # Lock it up!
-i3lock -e -f -c 000000 -i /tmp/screen.png -n; notify-send "Welcome back Roman!" -i ~/Pictures/man_in_steamy_room.png
+i3lock -e -f -c 000000 -i /tmp/screen.png -n
+xset s off -dpms
 
 # If still locked after $timeout milliseconds, turn off screen.
 while [[ $(pgrep -x i3lock) ]]; do
 	[[ $timeout -lt $(xssstate -i) ]] && xset dpms force off
 	sleep 5
 done
+notify-send "Welcome back Roman!" -i ~/Pictures/man_in_steamy_room.png

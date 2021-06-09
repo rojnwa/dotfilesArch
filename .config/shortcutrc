@@ -25,4 +25,4 @@ cfmc="$EDITOR ~/.config/ncmpcpp/config" \
 cfB="$EDITOR ~/.config/i3blocks/config" \
 cfk="$EDITOR ~/.config/sxhkd/sxhkdrc" \
 cfs="$EDITOR ~/st/config.h" \
-cfc="$EDITOR ~/.config/compton.conf" \
+cfc="$EDITOR ~/.config/picom.conf" \

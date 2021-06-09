@@ -9,10 +9,13 @@
 
 # #---Basic Definitions---# #
 for_window [class="^.*"] border pixel 2
-gaps inner 0
-gaps outer 0
+gaps inner 10
+gaps outer 10
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
+
+#smart_gaps on
+smart_borders on
 
 # #---Dropdown Windows---# #
 # General dropdown window traits. The order can matter.
@@ -28,9 +31,22 @@ for_window [instance="dropdown_*"] move position center
 
 bar {
 	font pango:SF Mono,Bungee, Inter Semi Bold, Neris Black, Acme, FontAwesome5Free, FontAwesome5Brands, Symbola Bold 9
+	i3bar_command i3bar -t
 	status_command i3blocks
 	position top
 	mode dock
+	#height 18
+	colors {
+		background #00000000
+		#statusline #4c7899
+		#separator #4c7899
+
+		focused_workspace  #00000000 #4c7899   #ffffff
+	        active_workspace   #00000000 #00000000 #ffffff
+        	inactive_workspace #00000000 #00000000 #888888
+      		urgent_workspace   #00000000 #00000000 #900000
+        	binding_mode       #00000000 #00000000 #900000
+	}
 #	modifier None
 }
 
@@ -176,8 +192,8 @@ bindsym $mod+Shift+0	move container to workspace $ws10
 
 for_window [class="Pinentry"] sticky enable
 for_window [class="sent"] border pixel 0px
-for_window [title="Glimpse Startup"] move workspace $ws5
-for_window [class="Glimpse"] move workspace $ws5
+for_window [title="Gimp Startup"] move workspace $ws5
+for_window [class="Gimp"] move workspace $ws5
 for_window [class="Spotify"] move workspace $ws9
 for_window [class="Telegram"] move workspace $ws10
 for_window [class="Signal"] move workspace $ws10
@@ -237,3 +253,8 @@ client.focused          $color  $color  #dddddd
 client.focused_inactive #333333 #333333 #888888
 client.unfocused        #333333 #333333 #888888
 client.urgent           #900000 #900000 #ffffff
+
+
+##
+# Custom executions
+exec --no-startup-id xss-lock -- ~/.config/i3/lock.sh
