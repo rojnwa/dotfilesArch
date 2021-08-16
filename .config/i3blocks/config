@@ -11,13 +11,13 @@ stroke=#000000
 #command=scroll ~/.local/bin/statusbar/mediaplayer
 #interval=repeat
 
-
-[music2]
-command=~/.local/bin/statusbar/scroll music2
-interval=1
-signal=13
-align=right
-min_width=350
+#enabled
+#[music2]
+#command=~/.local/bin/statusbar/scroll music2
+#interval=1
+#signal=13
+#align=right
+#min_width=350
 
 #[spotify]
 #command=i3blocks-spotify-persist -c ~/.config/i3blocks-spotify.config
@@ -56,17 +56,17 @@ signal=9
 #[iplocate]
 #interval=30
 
-[bandwidth1]
-instance=wlp3s0;in
-interval=1
-min_width=50
-align=left
-
-[bandwidth1]
-instance=wlp3s0;out
-interval=1
-min_width=50
-align=left
+#[bandwidth1]
+#instance=wlp3s0;in
+#interval=1
+#min_width=50
+#align=left
+#
+#[bandwidth1]
+#instance=wlp3s0;out
+#interval=1
+#min_width=50
+#align=left
 
 #[bandwidth2]
 #interval=persist
@@ -89,9 +89,9 @@ signal=8
 #label=
 interval=5
 
-[torrent]
-interval=10
-signal=7
+#[torrent]
+#interval=10
+#signal=7
 
 [weather]
 interval=3600
@@ -102,23 +102,23 @@ signal=5
 #interval=60
 #signal=12
 
-[memory]
-interval=1
-label=
+#[memory]
+#interval=1
+#label=
+#
+#[cpu]
+#interval=1
+#label=
 
-[cpu]
-interval=1
-label=
-
-[cpu_usage2]
-markup=pango
-interval=persist
-#min_width= 100.00%
-REFRESH_TIME=1
-LABEL=
-WARN_PERCENT=50
-CRIT_PERCENT=80
-#DECIMALS=2
+#[cpu_usage2]
+#markup=pango
+#interval=persist
+##min_width= 100.00%
+#REFRESH_TIME=1
+#LABEL=
+#WARN_PERCENT=50
+#CRIT_PERCENT=80
+##DECIMALS=2
 
 [volume]
 interval=once
@@ -150,6 +150,14 @@ interval=5
 label=
 interval=30
 
+[dunsttoggle]
+interval=once
+format=json
+markup=pango
+
+#min_width=50
+#align=center
+#DUNST_MUTE=off
 #[internet]
 #interval=10
 

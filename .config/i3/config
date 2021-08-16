@@ -33,6 +33,7 @@ bar {
 	font pango:SF Mono,Bungee, Inter Semi Bold, Neris Black, Acme, FontAwesome5Free, FontAwesome5Brands, Symbola Bold 9
 	i3bar_command i3bar -t
 	status_command i3blocks
+	tray_output primary
 	position top
 	mode dock
 	#height 18
@@ -60,7 +61,7 @@ set $color #1793D1
 
 # #---Basic Bindings---# #
 #bindsym $mod+Shift+Return	exec --no-startup-id samedir
-bindsym $mod+Shift+Return 	exec --no-startup-id $term -d "$(xcwd)"
+bindsym $mod+Shift+Return 	exec --no-startup-id $term -e "cd $(xcwd)"
 
 bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space		focus mode_toggle

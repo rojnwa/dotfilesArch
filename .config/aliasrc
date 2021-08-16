@@ -31,10 +31,9 @@ alias ka="killall" \
 	transde="trans -v -t de" \
 	trans="trans -v" \
 	ll="ls -l" \
-	la="ls -lA" \
+	la="ls -A" \
+	lla="ls -lA" \
 	nf="clear && neofetch --source '~/Pictures/terry-mouth.png' --backend 'chafa'" \
-	dunstp="notify-send 'DUNST_COMMAND_PAUSE'" \
-	dunstr="notify-send 'DUNST_COMMAND_RESUME'" \
 	7zc="7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on" \
 	4chan="python3 ~/4chin.py" \
 	recomp="ka picom && picom -b" \
