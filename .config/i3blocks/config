@@ -83,19 +83,19 @@ signal=9
 interval=once
 signal=8
 
-[nm-vpn]
+#[nm-vpn]
 #init_color=#FFFF00
 #on_color=#00FF00
 #label=
-interval=5
+#interval=5
 
 #[torrent]
 #interval=10
 #signal=7
 
-[weather]
-interval=3600
-signal=5
+#[weather]
+#interval=3600
+#signal=5
 
 #[mailbox]
 #label=

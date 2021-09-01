@@ -1,9 +1,11 @@
 #!/bin/sh
 alias ka="killall" \
 	mkd="mkdir -pv" \
+	cat="bat" \
 	rm="rm -v" \
 	cp="cp -iv" \
 	mv="mv -iv" \
+	chafa="chafa -c full" \
 	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" \
 	calcurse="calcurse -D ~/.config/calcurse" \
 	magit="nvim -c MagitOnly" \

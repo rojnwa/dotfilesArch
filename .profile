@@ -32,7 +32,7 @@ export FYRBASE="$HOME/fyr"
 # Adds `~/.local/bin/` and all subdirectories to $PATH
 export PATH="$HOME/.gem/ruby/3.0.0/bin:$HOME/.gem/ruby/2.7.0/bin:$PATH:$HOME/.cabal/bin:$FYRBASE/bin:$(du "$HOME/.local/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="ranger"
@@ -41,7 +41,7 @@ export REFER="$HOME/Documents/referbib"
 export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
 export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
-
+export QT_QPA_PLATFORMTHEME=gtk3 # Make QT look like gtk (mojave) - QGnomePlatform
 
 # less/man colors
 export LESS=-R

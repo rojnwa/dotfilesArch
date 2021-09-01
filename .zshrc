@@ -48,7 +48,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -137,7 +137,27 @@ function launch {
     nohup $1 >/dev/null 2>/dev/null & disown; exit
 }
 
-autoload -U bashcompinit
-bashcompinit
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
+#autoload -U bashcompinit
+#bashcompinit
+
+# Use lf to switch directories and bind it to ctrl-o
+rangercd () {
+    tmp="$(mktemp)"
+    ranger --choosedir="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp" >/dev/null
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' 'rangercd\n'
+
+bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 
 eval "$(register-python-argcomplete pipx)"

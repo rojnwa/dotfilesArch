@@ -4,7 +4,7 @@ setbg &				# Set the background
 sxhkd &				# Bind keys
 remaps &			# Switch to US international with Caps as Mod/Escape
 unclutter &			# Remove mouse when idle
-picom -b			# xcompmgr for transparency
+picom --experimental-backends -b # xcompmgr for transparency
 dunst &				# dunst for notifications
 #telegram-desktop &
 #signal-desktop --use-tray-icon &
