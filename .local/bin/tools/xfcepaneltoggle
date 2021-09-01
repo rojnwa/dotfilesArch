@@ -1,0 +1,7 @@
+#!/bin/bash
+if ps -p $(pgrep xfce4-panel) > /dev/null
+then
+  $(killall xfce4-panel)
+else
+  $(xfce4-panel -d)
+fi

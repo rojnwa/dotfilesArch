@@ -1,0 +1,31 @@
+#!/bin/sh
+init_color=${init_color:-#FFFF00}
+on_color=${on_color:-#00FF00}
+country_code=$(nordvpn status | grep 'Current server:' | sed -e 's/^Current server: //g' | sed -e 's/\.nordvpn\.com$//g' | sed -e 's/[0-9]//g' | tr '[:lower:]' '[:upper:]')
+if [[ -n $country_code ]]
+then
+    # Padlock and country code
+    vpn_prompt=$' '$country_code
+else
+    # Big red X
+    vpn_prompt=$'❌'
+fi
+
+export init_color on_color vpn_prompt
+
+nmcli -t connection show --active | awk -F ':' '
+BEGIN {
+    init_color=ENVIRON["init_color"]
+    on_color=ENVIRON["on_color"]
+    vpn_prompt=ENVIRON["vpn_prompt"]
+}
+$3=="vpn" {
+    name=$1
+    status="INIT"
+    color=init_color
+}
+$3=="tun" || ($4~/^tap/ || $3~/^tap/) {
+    status="ON"
+    color=on_color
+}
+END {if(status) printf("%s%s\n%s\n%s\n", vpn_prompt, name, status, color)}'

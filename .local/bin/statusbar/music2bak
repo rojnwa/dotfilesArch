@@ -1,0 +1,88 @@
+#!/bin/bash
+
+# TODO: refactor
+
+lockfile="/tmp/saumon-music-instance.lock"
+instance=$(cat "$lockfile" 2>/dev/null)
+
+if [[ $BLOCK_BUTTON -eq 2 ]]; then
+
+  if [[ "$instance" = "mpd" ]]; then
+    mpc pause-if-playing > /dev/null 2>&1
+    echo "none" > $lockfile
+    instance="none"
+  elif [[ "$instance" = "none" ]]; then
+    echo "spotify" > $lockfile
+    instance="spotify"
+  else
+    playerctl --player=spotify pause > /dev/null 2>&1
+    echo "mpd" > $lockfile
+    instance="mpd"
+  fi
+
+fi
+
+if [[ "$instance" = "mpd" ]]; then
+
+  act() {
+    status=$(mpc "$1")
+    playing=$(echo "$status" | grep "playing")
+    paused=$(echo "$status" | grep "paused")
+    repeat=$(echo "$status" | grep "repeat: on")
+    if [[ $playing ]]; then
+      echo -n '<span color="#8BC34A">  ' # playing icon
+      echo -n "$status" | head -n1 | tr -d '\n' | sed -r 's/&/&amp;/g'
+    elif [[ $paused ]]; then
+      echo -n '<span color="#EF6C00">  ' # paused icon
+      echo -n "$status" | head -n1 | tr -d '\n' | sed -r 's/&/&amp;/g'
+    else
+      echo -n '<span color="#999">  ' # music icon
+      echo -n "Stopped"
+    fi
+    echo " </span>"
+  }
+
+  case $BLOCK_BUTTON in
+    3) act toggle ;;  # right click, pause/unpause
+    4) act prev ;;  # scroll up, previous
+    5) act next ;;  # scroll down, next
+    *) act status ;;
+  esac
+
+elif [[ "$instance" = "none" ]]; then
+
+  echo "<span color='#999999'><span fallback='true'>  </span>Idle </span>"
+
+else
+
+  case $BLOCK_BUTTON in
+    3) $(i3-msg workspace 9) ;;  # right click, move to spotify workspace
+    1) $(playerctl --player=spotify play-pause && pkill -RTMIN+13 i3blocks) ;;  # left click, pause/unpause
+    4) $(playerctl --player=spotify previous && pkill -RTMIN+13 i3blocks && sleep 0.1 && pkill -RTMIN+13 i3blocks) ;;  # scroll up, previous
+    5) $(playerctl --player=spotify next && pkill -RTMIN+13 i3blocks && sleep 0.1 && pkill -RTMIN+13 i3blocks) ;;  # scroll down, next
+  esac
+
+
+  STATUS=$(playerctl --player=spotify status 2> /dev/null)
+  DATA=$(playerctl --player=spotify metadata --format "{{ artist }} – {{ title }}" 2> /dev/null)
+
+  if [[ "${STATUS}" = "Playing" ]]; then # TODO: check that data isn't empty (and below)
+    echo -n "<span color='#8BC34A'><span fallback='true'> </span>"
+  elif [[ "${STATUS}" = "Paused" ]]; then
+    echo -n "<span color='#EF6C00'><span fallback='true'> </span>"
+  else
+    echo -n "<span color='#999'><span fallback='true'>  Stopped</span>"
+  fi
+  if [[ "${STATUS}" = "Playing" ]] || [[ "${STATUS}" = "Paused" ]]; then
+    DATACLEANED=$(echo -n "${DATA}" | sed -r 's/&/&amp;/g')
+    LEFT=$(echo -n "${DATACLEANED}" | awk -F " - " '{print $1}' | tr -d '\n')
+    echo -n "$LEFT"
+    RIGHT=${DATACLEANED:${#LEFT}}
+    if [[ ${#RIGHT} -gt 1 ]]; then
+      echo -n "<span size='small'>$RIGHT</span>"
+    fi
+  fi
+
+  echo "</span>"
+
+fi

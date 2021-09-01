@@ -1,0 +1,3 @@
+#!/bin/sh
+pkill -f /dev/video || mpv --profile=low-latency --no-osc --no-input-default-bindings --input-conf=/dev/null --geometry=-0-0 --autofit=30%  --title="mpvfloat" /dev/video0
+#pkill -f /dev/video || ffplay -window_title "mpvfloat" -loglevel -8 -i /dev/video0
