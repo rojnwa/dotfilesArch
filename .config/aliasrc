@@ -1,6 +1,7 @@
 #!/bin/sh
 alias ka="killall" \
 	mkd="mkdir -pv" \
+	locate="plocate" \
 	cat="bat" \
 	rm="rm -v" \
 	cp="cp -iv" \
@@ -41,6 +42,8 @@ alias ka="killall" \
 	recomp="ka picom && picom -b" \
 	quickwall="quickwall --setter feh" \
 	colormeme="exec 1> >(lolcat >&2)"
+
+
 
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
 

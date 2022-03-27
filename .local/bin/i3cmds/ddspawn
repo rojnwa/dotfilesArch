@@ -12,7 +12,7 @@ shift
 if xwininfo -tree -root | rg "(dropdown_$script)";
 then
 	echo "Window detected."
-	i3 "[title=\"dropdown_$script\"] scratchpad show; [title=\"dropdown_$script\"] move position center"
+	i3 "[instance=\"dropdown_$script\"] scratchpad show; [instance=\"dropdown_$script\"] move position center"
 else
 	echo "Window not detected... spawning."
 	i3 "exec --no-startup-id $TERMINAL --class dropdown_$script $@ -e $script"

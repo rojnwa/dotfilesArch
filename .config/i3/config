@@ -19,31 +19,32 @@ smart_borders on
 
 # #---Dropdown Windows---# #
 # General dropdown window traits. The order can matter.
-for_window [class="dropdown_*"] floating enable
+for_window [instance="dropdown_*"] floating enable
 for_window [class="Zeal"] floating enable
 for_window [class="Zeal"] resize set 1260 706
 for_window [class="Zeal"] move position center
-for_window [class="dropdown_*"] move scratchpad
-for_window [class="dropdown_*"] sticky enable
-#for_window [class="dropdown_*"] scratchpad show
-for_window [class="dropdown_tmuxdd"] resize set 625 450
-for_window [class="dropdown_dropdowncalc"] resize set 800 300
-for_window [class="dropdown_tmuxdd"] border pixel 3
-for_window [class="dropdown_dropdowncalc"] border pixel 2
-for_window [class="dropdown_*"] move position center
+for_window [instance="dropdown_*"] move scratchpad
+for_window [instance="dropdown_*"] sticky enable
+#for_window instances="dropdown_*"] scratchpad show
+for_window [instance="dropdown_tmuxdd"] resize set 625 450
+for_window [instance="dropdown_dropdowncalc"] resize set 800 300
+for_window [instance="dropdown_tmuxdd"] border pixel 3
+for_window [instance="dropdown_dropdowncalc"] border pixel 2
+for_window [instance="dropdown_*"] move position center
 
 bar {
-	font pango:SF Mono,Bungee, Inter Semi Bold, Neris Black, Acme, FontAwesome5Free, FontAwesome5Brands, Symbola Bold 9
+	font pango:Operator Mono SSm Lig, SF Mono,Bungee, Inter Semi Bold, Neris Black, Acme, FontAwesome5Free, FontAwesome5Brands, Symbola BookItalic 8
 	i3bar_command i3bar -t
 	status_command i3blocks
 	tray_output primary
 	position top
 	mode dock
-	#height 18
+	height 15
+	separator_symbol "❯"
 	colors {
 		background #00000000
-		#statusline #4c7899
-		#separator #4c7899
+		statusline #4c7899
+		separator #4c7899
 
 		focused_workspace  #00000000 #4c7899   #ffffff
 	        active_workspace   #00000000 #00000000 #ffffff

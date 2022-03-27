@@ -26,6 +26,7 @@ font/ttf=org.gnome.FontManager.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-PGBXW0.desktop
 x-scheme-handler/etcher=balena-etcher-electron.desktop
 x-scheme-handler/ferdi=ferdi.desktop
+x-scheme-handler/discord-409416265891971072=discord-409416265891971072.desktop
 
 [Added Associations]
 font/otf=org.gnome.FontViewer.desktop;
@@ -47,3 +48,4 @@ application/pdf=mupdf.desktop;firefox.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-PGBXW0.desktop;
 application/vnd.ms-publisher=userapp-nvim-USKK10.desktop;
 application/vnd.rar=org.gnome.Nautilus.desktop;
+application/javascript=VSCodium.desktop;

@@ -111,6 +111,7 @@ sub mpd {
     my $data = qx(mpc current);
     if (not $data eq '') {
         buttons("mpd");
+    	$data =~ s/&(?!#\d{1,3};)/&#38;/g;
         print($data);
         exit 0;
     }
@@ -120,17 +121,20 @@ sub playerctl {
     buttons('playerctl');
 
     my $artist = qx(playerctl $player_arg metadata artist);
+    $artist =~ s/&(?!#\d{1,3};)/&#38;/g;
     chomp $artist;
     # exit status will be nonzero when playerctl cannot find your player
     exit(0) if $? || $artist eq '(null)';
+    chomp($artist) if $artist;
 
     push(@metadata, $artist) if $artist;
 
     my $title = qx(playerctl $player_arg metadata title);
     exit(0) if $? || $title eq '(null)';
 
+    $title =~ s/&(?!#\d{1,3};)/&#38;/g;
     push(@metadata, $title) if $title;
-
+    chomp(@metadata);
     print(join(" - ", @metadata)) if @metadata;
 }
 
@@ -138,6 +142,7 @@ sub rhythmbox {
     buttons('rhythmbox');
 
     my $data = qx(rhythmbox-client --print-playing --no-start);
+    $data =~ s/&(?!#\d{1,3};)/&#38;/g;
     print($data);
 }
 

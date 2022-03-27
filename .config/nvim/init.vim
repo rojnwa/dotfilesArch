@@ -30,19 +30,19 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'jreybert/vimagit'
-Plug 'lukesmithxyz/vimling'
+" Plug 'lukesmithxyz/vimling'
 Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'kovetskiy/sxhkd-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/syntastic'
 Plug 'psf/black'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
 
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
@@ -149,7 +149,6 @@ let g:LanguageClient_serverCommands = {
 	autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 " Update binds when sxhkdrc is updated.
 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
-
 
 " Syntastic
 set statusline+=%#warningmsg#

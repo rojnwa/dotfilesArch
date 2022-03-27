@@ -8,6 +8,11 @@ picom --experimental-backends -b # xcompmgr for transparency
 dunst &				# dunst for notifications
 #telegram-desktop &
 #signal-desktop --use-tray-icon &
-#sleep 2 && qsyncthingtray & 	# 2 secs delay to prevent networking issues
+sleep 2 && qsyncthingtray & 	# 2 secs delay to prevent networking issues
 nm-applet &
+#mpd-mpris &
+#/var/lib/portmaster/portmaster-start notifier --data=/var/lib/portmaster &
 xautolock -time 10 -locker "bash ~/.config/i3/lock.sh" &
+caffeine-indicator &
+gammy & # Redlight filter
+xinput disable "SynPS/2 Synaptics TouchPad" &

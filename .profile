@@ -28,14 +28,16 @@ SSH_ENV="$HOME/.ssh/environment"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export FYRBASE="$HOME/fyr"
+export SPICETIFY_INSTALL="/home/cal/spicetify-cli"
 
 # Adds `~/.local/bin/` and all subdirectories to $PATH
-export PATH="$HOME/.gem/ruby/3.0.0/bin:$HOME/.gem/ruby/2.7.0/bin:$PATH:$HOME/.cabal/bin:$FYRBASE/bin:$(du "$HOME/.local/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+export PATH="$SPICETIFY_INSTALL:$HOME/.gem/ruby/3.0.0/bin:$HOME/.gem/ruby/2.7.0/bin:$PATH:$HOME/.cabal/bin:$FYRBASE/bin:$(du "$HOME/.local/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 export EDITOR="nvim"
-export TERMINAL="alacritty"
+export TERMINAL="st"
 export BROWSER="firefox"
 export READER="zathura"
 export FILE="ranger"
+export MUSIC_DIR="$HOME/Music"
 export BIB="$HOME/Nextcloud/Uni/BA/src/bib/references.bib"
 export REFER="$HOME/Documents/referbib"
 export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"

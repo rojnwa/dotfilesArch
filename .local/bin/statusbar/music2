@@ -15,7 +15,8 @@ if [[ $BLOCK_BUTTON -eq 2 ]]; then
     echo "spotify" > $lockfile
     instance="spotify"
   else
-    playerctl --player=spotify pause > /dev/null 2>&1
+    #playerctl --player=spotify pause > /dev/null 2>&1
+    playerctl pause > /dev/null 2>&1
     echo "mpd" > $lockfile
     instance="mpd"
   fi

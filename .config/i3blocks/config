@@ -4,7 +4,7 @@ full_text=
 separator_block_width=15
 align=center
 markup=pango
-#color=#666666
+color=#e3e3e3
 stroke=#000000
 
 #[scroll]
@@ -23,10 +23,10 @@ stroke=#000000
 #command=i3blocks-spotify-persist -c ~/.config/i3blocks-spotify.config
 #interval=persist
 
-#[mediaplayer]
+[mediaplayer]
 #instance=spotify
-#interval=5
-#signal=11
+interval=5
+signal=11
 
 #[update]
 #markup=pango
@@ -56,6 +56,9 @@ signal=9
 #[iplocate]
 #interval=30
 
+[sb_nettraf]
+interval=1
+
 #[bandwidth1]
 #instance=wlp3s0;in
 #interval=1
@@ -78,37 +81,40 @@ signal=9
 #CRIT_RX=512000
 #CRIT_TX=51200
 
-[pacpackages]
+#[pacpackages]
 #label=📦
-interval=once
-signal=8
+#interval=once
+#signal=8
 
-#[nm-vpn]
-#init_color=#FFFF00
-#on_color=#00FF00
+[nm-vpn]
+init_color=#FFFF00
+on_color=#00FF00
 #label=
-#interval=5
+interval=5
 
-#[torrent]
-#interval=10
-#signal=7
+[torrent]
+interval=10
+signal=7
 
-#[weather]
-#interval=3600
-#signal=5
+[weather2]
+interval=10800
+signal=5
 
 #[mailbox]
 #label=
 #interval=60
 #signal=12
 
-#[memory]
-#interval=1
+[memory]
+interval=1
 #label=
 #
-#[cpu]
-#interval=1
+[cpu]
+interval=1
 #label=
+
+[sb-cpubars]
+interval=1
 
 #[cpu_usage2]
 #markup=pango
@@ -147,8 +153,12 @@ command=battery-poly
 interval=5
 
 [clock]
-label=
+#label=
 interval=30
+
+[kb_layout]
+interval=once
+signal=30
 
 [dunsttoggle]
 interval=once
