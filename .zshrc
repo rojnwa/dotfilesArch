@@ -164,5 +164,8 @@ bindkey -s '^z' "rg --files | sk --preview='bat {} --color=always' | xargs -I {}
 
 eval "$(register-python-argcomplete pipx)"
 
-autoload -U promptinit; promptinit
-prompt spaceship
+#source /usr/lib/spaceship-prompt/spaceship.zsh
+#autoload -U promptinit; promptinit
+#prompt spaceship
+eval "$(starship init zsh)"
+export PATH=$PATH:/home/cal/.spicetify

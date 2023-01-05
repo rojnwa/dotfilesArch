@@ -29,6 +29,7 @@ SSH_ENV="$HOME/.ssh/environment"
 export XDG_CONFIG_HOME="$HOME/.config"
 export FYRBASE="$HOME/fyr"
 export SPICETIFY_INSTALL="/home/cal/spicetify-cli"
+export XDG_CURRENT_DESKTOP=Unity
 
 # Adds `~/.local/bin/` and all subdirectories to $PATH
 export PATH="$SPICETIFY_INSTALL:$HOME/.gem/ruby/3.0.0/bin:$HOME/.gem/ruby/2.7.0/bin:$PATH:$HOME/.cabal/bin:$FYRBASE/bin:$(du "$HOME/.local/bin" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
@@ -62,7 +63,7 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 #echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
 
 # Start graphical server if i3 not already running.
-[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
+[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && wrappedhl
 
 # Switch escape and caps if tty:
 #sudo -n loadkeys ~/.local/bin/ttymaps.kmap 2>/dev/null
